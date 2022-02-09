@@ -41,7 +41,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         score: action.payload,
       }
-
     default:
       return state
   }

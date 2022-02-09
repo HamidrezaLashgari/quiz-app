@@ -11,7 +11,7 @@ const TextFieldComp = () => {
   }
 
   return (
-    <Box mt={3} with="100%">
+    <Box mt={3} width="100%">
       <FormControl fullWidth size="small">
         <TextField
           onChange={handleChange}

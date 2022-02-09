@@ -1,18 +1,17 @@
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { Box } from '@mui/system'
 import React, { useState } from 'react'
-
-import { FormControl, InputLabel, MenuItem, Select, Box } from '@mui/material'
+import { useDispatch } from 'react-redux'
 import {
   handleCategoryChange,
   handleDifficultyChange,
   handleTypeChange,
-} from '../../src/redux/actions'
-import { useDispatch } from 'react-redux'
+} from '../redux/actions'
 
 const SelectField = (props) => {
   const { label, options } = props
-
-  const [value, setValue] = useState('')
   const dispatch = useDispatch()
+  const [value, setValue] = useState('')
 
   const handleChange = (e) => {
     setValue(e.target.value)

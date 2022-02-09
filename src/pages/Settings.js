@@ -5,9 +5,8 @@ import TextFieldComp from '../components/TextFieldComp'
 import useAxios from '../hooks/useAxios'
 import { useNavigate } from 'react-router-dom'
 
-function Settings() {
+const Settings = () => {
   const { response, error, loading } = useAxios({ url: '/api_category.php' })
-
   const navigate = useNavigate()
 
   if (loading) {
@@ -21,13 +20,13 @@ function Settings() {
   if (error) {
     return (
       <Typography variant="h6" mt={20} color="red">
-        Something is WRONG!
+        Something is Wrong!
       </Typography>
     )
   }
 
   const difficultyOptions = [
-    { id: 'ease', name: 'Easy' },
+    { id: 'easy', name: 'Easy' },
     { id: 'medium', name: 'Medium' },
     { id: 'hard', name: 'Hard' },
   ]
@@ -52,6 +51,11 @@ function Settings() {
         <Button fullWidth variant="contained" type="submit">
           Get Started
         </Button>
+
+        <h5>
+        Sometimes you may not see anything, dont worry, there is a problem from the server <br />:D
+        Dont select the category section to avoid problems
+        </h5>
       </Box>
     </form>
   )

@@ -28,6 +28,7 @@ function App() {
             />
             <Route path="/questions" element={<Questions />} />
             <Route path="/score" element={<FinalScreen />} />
+
           </Routes>
         </Box>
       </Container>

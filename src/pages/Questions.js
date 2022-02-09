@@ -11,7 +11,7 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max))
 }
 
-function Questions() {
+const Questions = () => {
   const {
     question_category,
     question_difficulty,
@@ -20,25 +20,20 @@ function Questions() {
     score,
   } = useSelector((state) => state)
   const navigate = useNavigate()
-
   const dispatch = useDispatch()
 
   let apiUrl = `/api.php?amount=${amount_of_question}`
-
   if (question_category) {
-    apiUrl = apiUrl.concat(`&category=${question_category}`)
+    apiUrl = apiUrl.concat(`&category=${question_category}`);
   }
-
   if (question_difficulty) {
     apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`)
   }
-
   if (question_type) {
     apiUrl = apiUrl.concat(`&type=${question_type}`)
   }
 
   const { response, loading } = useAxios({ url: apiUrl })
-
   const [questionIndex, setQuestionIndex] = useState(0)
   const [options, setOptions] = useState([])
 
@@ -75,7 +70,6 @@ function Questions() {
       navigate('/score')
     }
   }
-
   return (
     <Box>
       <Typography variant="h4">Questions {questionIndex + 1}</Typography>
