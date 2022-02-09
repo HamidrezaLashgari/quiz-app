@@ -15,7 +15,17 @@ function App() {
       <Container maxWidth="sm">
         <Box textAlign="center" mt={5}>
           <Routes>
-            <Route path="/" element={<><Typography variant='h2' fontWeight="bold">Quiz App</Typography><Settings /></>} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Typography variant="h2" fontWeight="bold">
+                    Quiz App
+                  </Typography>
+                  <Settings />
+                </>
+              }
+            />
             <Route path="/questions" element={<Questions />} />
             <Route path="/score" element={<FinalScreen />} />
           </Routes>
