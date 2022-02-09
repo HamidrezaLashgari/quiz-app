@@ -11,11 +11,11 @@ import { useDispatch } from 'react-redux'
 const SelectField = (props) => {
   const { label, options } = props
 
-  const [value, setvalue] = useState('')
+  const [value, setValue] = useState('')
   const dispatch = useDispatch()
 
   const handleChange = (e) => {
-    setvalue(e.target.value)
+    setValue(e.target.value)
     switch (label) {
       case 'Category':
         dispatch(handleCategoryChange(e.target.value))
@@ -25,9 +25,6 @@ const SelectField = (props) => {
         break
       case 'Type':
         dispatch(handleTypeChange(e.target.value))
-        break
-      case 'Category':
-        dispatch(handleCategoryChange(e.target.value))
         break
       default:
         return
